@@ -15,41 +15,62 @@
               <div class="artboard artboard-demo phone-1"><br>
                 <div class="stats shadow m-0 p-0">
                     <div class="stat">
-                      <div class="stat-value">89,400</div>
+                      <div class="stat-value" id="totalAmount">89400</div>
                       <!-- <div class="stat-desc">21% more than last month</div> -->
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div class="flex justify-center gap-3">
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Add Money</button>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Cashout</button>
+                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md" id="addBtnToggle">Add Money</button>
+                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md" id="outBtnToggle">Cashout</button>
                 </div>
                 <div class="divider"></div>
 
-                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl" id="addMoney">
                     <form class="card-body">
                       <div class="form-control">
                         <label class="label">
                           <span class="label-text">Amount</span>
                         </label>
-                        <input type="email" placeholder="email" class="input input-bordered" required />
+                        <input id="addingAmount" type="text" placeholder="Amount to be added" class="input input-bordered" required />
                       </div>
                       <div class="form-control">
                         <label class="label">
                           <span class="label-text">Pin</span>
                         </label>
-                        <input type="password" placeholder="password" class="input input-bordered" required />
+                        <input id="pinAdd" type="password" placeholder="Pin" class="input input-bordered" required />
         
                       </div>
                       <div class="form-control mt-6">
-                        <button class="btn btn-primary">Jack</button>
+                        <button class="btn btn-primary" id="addButton">Add Money</button>
                       </div>
                     </form>
                 </div>
-
+                
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl hidden" id="cashOut">
+                  <form class="card-body">
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Amount</span>
+                      </label>
+                      <input id="outAmount" type="text" placeholder="Amount to be out" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Pin</span>
+                      </label>
+                      <input id="outPin" type="password" placeholder="Pin" class="input input-bordered" required />
+      
+                    </div>
+                    <div class="form-control mt-6">
+                      <button class="btn btn-primary" id="outBtn">Cash Out</button>
+                    </div>
+                  </form>
+              </div>
 
             </div>
           </div>
     </main>
+    <script src="./payooHome.js"></script>
 </body>
 </html>
