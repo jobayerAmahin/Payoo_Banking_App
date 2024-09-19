@@ -20,11 +20,17 @@ document.getElementById('addButton').addEventListener('click',function(event){
 document.getElementById('outBtnToggle').addEventListener('click',function(){
     document.getElementById('cashOut').classList.remove('hidden');
     document.getElementById('addMoney').classList.add('hidden');
+    
+    document.getElementById('addingAmount').value=''
+    document.getElementById('pinAdd').value=''
 })
 
 document.getElementById('addBtnToggle').addEventListener('click',function(){
     document.getElementById('addMoney').classList.remove('hidden');
     document.getElementById('cashOut').classList.add('hidden');
+
+    document.getElementById('addingAmount').value=''
+    document.getElementById('pinAdd').value=''
 })
 
 
