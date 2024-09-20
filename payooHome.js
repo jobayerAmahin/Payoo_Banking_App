@@ -1,13 +1,17 @@
 //Add Money Section
-let totalAmountText=document.getElementById('totalAmount').innerText;
-let totalAmount=parseFloat(totalAmountText);
+
+let totalAmount=returnInputText('totalAmount');
 document.getElementById('addButton').addEventListener('click',function(event){
     event.preventDefault();
-    const addingAmount=document.getElementById('addingAmount').value;
-    const pinAdd=document.getElementById('pinAdd').value;
-    if(pinAdd==='1426'){
-        totalAmount=totalAmount+parseFloat(addingAmount);
+    const addingAmount=returnInputValue('addingAmount');
+    const pinAdd=returnInputValue('pinAdd');
+    
+    if(pinAdd===1426){
+        totalAmount=totalAmount+addingAmount;
         document.getElementById('totalAmount').innerText=totalAmount;
+    }
+    else if(pinAdd==='' || addingAmount===''){
+        alert('Please Provide amount or pin number')
     }
     else{
         alert('Wrong Pin')
@@ -38,16 +42,16 @@ document.getElementById('addBtnToggle').addEventListener('click',function(){
 
 document.getElementById('outBtn').addEventListener('click',function(event){
     event.preventDefault();
-    const outAmount=document.getElementById('outAmount').value;
-    const outPin=document.getElementById('outPin').value;
-    if(outPin==='1426'){
-        totalAmount=totalAmount-parseFloat(outAmount);
+    const outAmount=returnInputValue('outAmount');
+    const outPin=returnInputValue('outPin');
+    if(outPin===1426){
+        totalAmount=totalAmount-outAmount;
         document.getElementById('totalAmount').innerText=totalAmount;
     }
     else{
         alert('Wrong Pin')
     }
     
-    document.getElementById('addingAmount').value=''
-    document.getElementById('pinAdd').value=''
+    document.getElementById('outAmount').value=''
+    document.getElementById('outPin').value=''
 })
