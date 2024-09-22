@@ -11,3 +11,12 @@ function returnInputText(id){
     const textValue=parseFloat(inputText)
     return textValue;
 }
+
+function showButtonContent(id){
+    document.getElementById('addMoney').classList.add('hidden')
+    document.getElementById('cashOut').classList.add('hidden')
+    document.getElementById('savingFormula').classList.add('hidden')
+    document.getElementById('historyTransaction').classList.add('hidden')
+
+    document.getElementById(id).classList.remove('hidden')
+}

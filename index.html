@@ -5,20 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
     <title>Payoo</title>
 </head>
 <body class="flex justify-center">
     <section>
-        <div class="mockup-phone border-primary">
+        
+        <div class="mockup-phone border-primary my-6">
+            
             <div class="camera"></div>
             <div class="display">
               <div class="artboard artboard-demo phone-1">
-
+          
                 <!-- Mobile Login Section -->
                 <div class="hero bg-base-200 min-h-screen">
+                    
                     <div class="hero-content flex-col lg:flex-row-reverse">
+                      
                       <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <form class="card-body">
+                          <h1 class="text-4xl text-blue-700 font-bold mx-auto my-4">Payoo</h1>
                           <div class="form-control">
                             <label class="label">
                               <span class="label-text">Number</span>

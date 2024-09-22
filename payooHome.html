@@ -13,16 +13,18 @@
             <div class="camera"></div>
             <div class="display">
               <div class="artboard artboard-demo phone-1"><br>
-                <div class="stats shadow m-0 p-0">
+                <div class="bg-white-800 rounded-lg shadow mt-2 p-0">
                     <div class="stat">
                       <div class="stat-value" id="totalAmount">89400</div>
                       <!-- <div class="stat-desc">21% more than last month</div> -->
                     </div>
                 </div>
                 <div class="divider"></div>
-                <div class="flex justify-center gap-3">
+                <div class="grid grid-cols-2 items-center gap-3">
                     <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md" id="addBtnToggle">Add Money</button>
                     <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md" id="outBtnToggle">Cashout</button>
+                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md" id="transBtnToggle">Transactions</button>
+                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md" id="saveBtnToggle">Saving Formula</button>
                 </div>
                 <div class="divider"></div>
 
@@ -66,6 +68,14 @@
                       <button class="btn btn-primary" id="outBtn">Cash Out</button>
                     </div>
                   </form>
+              </div>
+
+              <div class="history hidden" id="historyTransaction">
+                <h1 class="text-black-800 mb-2">Welcome to transaction page</h1>
+              </div>
+
+              <div id="savingFormula" class="hidden">
+                <h1>Welcome to saving formula page</h1>
               </div>
 
             </div>
