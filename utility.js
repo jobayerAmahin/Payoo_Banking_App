@@ -1,7 +1,6 @@
 //Function for returning input value
 function returnInputValue(id){
-    const inputValue=document.getElementById(id).value;
-    const inputNumebr=parseFloat(inputValue);
+    const inputNumebr=parseFloat(document.getElementById(id).value)
     return inputNumebr;
 }
 

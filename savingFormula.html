@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Saving Formula</title>
+</head>
+<body>
+    <div id="mainSec" class="artboard phone-2 mx-0 mx-auto bg-slate-100 py-5 px-3 mt-3">
+        <h1 class="text-3xl font-sans font-bold text-blue-700 text-center">Saving Formula</h1>
+        <div>
+            <div class="grid grid-cols-2 my-5">
+                <button class="btn btn-md bg-gradient-to-r from-blue-700 to-blue-400 text-white">Assistant</button>
+                <button class="btn btn-md bg-gradient-to-r from-blue-700 to-blue-400 text-white">History</button>
+            </div>
+
+            <div class="flex flex-col my-3">
+                <label for="" class="font-bold text-black">Income</label>
+                <input id="income" type="text" placeholder="Type here" class="input input-bordered w-full max-w-lg"/>
+            </div>
+            
+            <div class="flex justify-between my-3">
+                <div class="flex flex-col">
+                    <label for="" class="font-bold text-black">House</label>
+                    <input id="house" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"/>
+                </div>
+                <div class="flex flex-col">
+                    <label for="" class="font-bold text-black">Transport</label>
+                    <input id="transport" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"/>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 my-3">
+                <div class="flex flex-col">
+                    <label for="" class="font-bold text-black">Food & Other</label>
+                    <input id="food" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"/>
+                </div>
+                <p></p>
+            </div>
+
+            <button id="calculation" class="my-3 font-bold btn btn-wide bg-blue-600 w-full max-w-lg text-white hover:bg-slate-400 hover:transition-colors duration-200 ease-in-out">Calculate</button>
+            <div class="flex flex-col my-3">
+                <label for="" class="font-bold text-black">Savings(%)</label>
+                <input id="savings" type="text" placeholder="Type here" class="input input-bordered w-full max-w-lg"/>
+                <button id="calculateSavings" class="my-3 btn btn-wide bg-green-700 w-full max-w-lg text-white font-bold">Calculate Savings</button>
+            </div>
+
+        </div>
+
+        <div id="summary" class="grid grid-cols-2 w-11/12 mx-auto gap-5 bg-white pl-5 py-3 hidden">
+            <h1 class="font-bold text-1xl text-black text-center col-span-2">Result Summary</h1>
+            <div class="border-l-2 border-red-500 rounded-lg">
+                <p class="text-xs px-4">Total Expense</p>
+                <h2 class="font-bold px-4">$ <span id="exp">0</span></h2>
+            </div>
+            <div class="border-l-2 border-blue-500 rounded-lg">
+                <p class="text-xs px-4">Balance</p>
+                <h2 class="font-bold px-4">$ <span id="bal">0</span></h2>
+            </div>
+            <div class="border-l-2 border-yellow-500 rounded-lg">
+                <p class="text-xs px-4">Savings Amount</p>
+                <h2 class="font-bold px-4">$ <span id="sav">0</span></h2>
+            </div>
+            <div class="border-l-2 border-green-500 rounded-lg">
+                <p class="text-xs px-4">Remaining Balance</p>
+                <h2 class="font-bold px-4">$ <span id="rem">0</span></h2>
+            </div>
+        </div>
+        
+    </div>
+    <script src="./utility.js"></script>
+    <script src="./savingFormula.js"></script>
+
+</body>
+</html>
