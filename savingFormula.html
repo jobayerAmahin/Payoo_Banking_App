@@ -9,12 +9,13 @@
 </head>
 <body>
     <div id="mainSec" class="artboard phone-2 mx-0 mx-auto bg-slate-100 py-5 px-3 mt-3">
-        <h1 class="text-3xl font-sans font-bold text-blue-700 text-center">Saving Formula</h1>
-        <div>
-            <div class="grid grid-cols-2 my-5">
-                <button class="btn btn-md bg-gradient-to-r from-blue-700 to-blue-400 text-white">Assistant</button>
-                <button class="btn btn-md bg-gradient-to-r from-blue-700 to-blue-400 text-white">History</button>
-            </div>
+        <h1 class="text-3xl font-sans font-bold text-blue-700 text-center">Expense and Savings</h1>
+        <div class="grid grid-cols-2 my-5">
+            <button id="accountBtn" class="btn btn-md bg-gradient-to-r from-blue-700 to-blue-400 text-white">Assistant</button>
+            <button id="historyBtn" class="btn btn-md">History</button>
+        </div>
+        <div id="accountSec">
+
 
             <div class="flex flex-col my-3">
                 <label for="" class="font-bold text-black">Income</label>
@@ -68,8 +69,18 @@
                 <h2 class="font-bold px-4">$ <span id="rem">0</span></h2>
             </div>
         </div>
+
+        <div class="w-11/12 mx-auto my-5" id="notificationSec">
+            <h1 class="text-lg text-blue-600 font-bold flex justify-center">Expense History</h1>
+            <div id="historySec" class="grid grid-cols-2">
+
+            </div>
+
+        </div>
         
     </div>
+
+    
     <script src="./utility.js"></script>
     <script src="./savingFormula.js"></script>
 

@@ -1,6 +1,52 @@
-function returnNumber(id){
-    return parseFloat(document.getElementById(id).value)
+let newTime=new Date().toLocaleTimeString();
+const historySec=document.getElementById('historySec');
+
+function addNotification(var1,var2,var3){
+    const notificationN=document.createElement('div');
+    notificationN.innerHTML=`
+        <p>${newTime}</p>
+        <p>Income- ${var1} $</p>
+        <p>Expense- ${var2} $</p>
+        <p>Balance- ${var3} $</p>
+    `
+    notificationN.setAttribute('class','border-2')
+    notificationN.classList.add('p-2','border-dashed','rounded-lg','my-1')
+    historySec.insertBefore(notificationN,historySec.firstChild)
+    if(historySec.childElementCount>3){
+        historySec.removeChild(historySec.lastChild)
+    }
+
+    // if(historySec.childElementCount<=3){
+    //     return [historySec.insertBefore(notificationN,historySec.firstChild),historySec.removeChild(historySec.lastChild)]
+    // }
+    
 }
+
+function buttonToggle(id1,id2){
+    document.getElementById('accountSec').classList.add('hidden');
+    document.getElementById('notificationSec').classList.add('hidden');
+    document.getElementById('summary').classList.add('hidden');
+
+    document.getElementById(id1).classList.remove('hidden')
+
+    //Background Color
+
+    document.getElementById('historyBtn').classList.remove('bg-gradient-to-r','from-blue-700','to-blue-400','text-white');
+    document.getElementById('accountBtn').classList.remove('bg-gradient-to-r','from-blue-700','to-blue-400','text-white');
+
+    document.getElementById(id2).classList.add('bg-gradient-to-r','from-blue-700','to-blue-400','text-white');
+}
+
+document.getElementById('accountBtn').addEventListener('click',function(){
+    
+    buttonToggle('accountSec','accountBtn')
+})
+
+document.getElementById('historyBtn').addEventListener('click',function(){
+    buttonToggle('notificationSec','historyBtn')
+    document.getElementById('summary').classList.remove('hidden')
+})
+
 
 //Variable declare globally
 
@@ -9,10 +55,10 @@ function returnNumber(id){
 //     console.log(income)
 // })
 
-let totalExpense=parseFloat(house+transport+food);
-let balance=income-totalExpense;
-let savingsAmount=balance*savings/100;
-let remaining=balance-savingsAmount;
+// let totalExpense=parseFloat(house+transport+food);
+// let balance=income-totalExpense;
+// let savingsAmount=balance*savings/100;
+// let remaining=balance-savingsAmount;
 
 //-----------------------------------------Calculation Button
 document.getElementById('calculation').addEventListener('click',function(){
@@ -36,7 +82,10 @@ document.getElementById('calculation').addEventListener('click',function(){
 
         document.getElementById('exp').innerText=totalExpense;
         document.getElementById('bal').innerText=balance;
-    }
+
+        addNotification(income,totalExpense,balance)
+        document.getElementById('notificationSec').classList.add('hidden');
+        }
 
     document.getElementById('summary').classList.remove('hidden');
 
